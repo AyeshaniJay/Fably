@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FABLY - Customer Management</title>
+    <link rel="icon" href="resources/images/webicon.png">
+
+    <!-- Custom fonts for this template-->
+    <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="resources/vendor/datatables/css/datatables.min.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #008B8B">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" style="text-transform:none; color: white; font-family: Calibri">
+                For Fabulous Fashion
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Administration</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a id="Employee" class="collapse-item" href="/employee">Employee</a>
+                        <a id="User" class="collapse-item" href="/user">User</a>
+                        <a id="Privilege" class="collapse-item" href="/privilege">Privilege</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Sales Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Sales</span>
+                </a>
+                <div id="collapseUtilities" class="collapse show" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Sales:</h6>
+                        <a id="Customer" class="collapse-item active" href="/customer">Customer</a>
+                        <a id="Order" class="collapse-item" href="/order">Order</a>
+                        <a id="OrderPayment" class="collapse-item" href="/payment">Order Payment</a>
+                        <a id="Delivery" class="collapse-item" href="/delivery">Delivery</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Invoices Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInvoices"
+                   aria-expanded="true" aria-controls="collapseInvoices">
+                    <i class="fas fa-fw fa-solid fa-file-invoice"></i>
+                    <span>Invoices</span>
+                </a>
+                <div id="collapseInvoices" class="collapse" aria-labelledby="headingInvoices"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Invoices:</h6>
+                        <a id="InvoiceView" class="collapse-item" href="/invoiceview">View Invoice</a>
+                        <a id="InvoiceCreate" class="collapse-item" href="/invoicecreate">Create Invoice</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Product Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProducts"
+                   aria-expanded="true" aria-controls="collapseProducts">
+                    <i class="fas fa-fw fa-tshirt"></i>
+                    <span>Products</span>
+                </a>
+                <div id="collapseProducts" class="collapse" aria-labelledby="headingProducts"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Products:</h6>
+                        <a id="Product" class="collapse-item" href="/product">Product</a>
+                        <a id="Store" class="collapse-item" href="/store">Store</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Purchase Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePurchases"
+                   aria-expanded="true" aria-controls="collapsePurchases">
+                    <i class="fas fa-fw fa-solid fa-shopping-bag"></i>
+                    <span>Purchases</span>
+                </a>
+                <div id="collapsePurchases" class="collapse" aria-labelledby="headingPurchases"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Purchase:</h6>
+                        <a id="Supplier" class="collapse-item" href="/supplier">Supplier</a>
+                        <a id="Porder" class="collapse-item" href="/purchaseorder">Purchase Order</a>
+                        <a id="GRN" class="collapse-item" href="/grn">GRN</a>
+                        <a id="SupplierPayment" class="collapse-item" href="/supplierpayment">Supplier Payment</a>
+<!--                        <a id="PriceRequest" class="collapse-item" href="/pricerequest">Price Request</a>-->
+<!--                        <a id="PriceDetail" class="collapse-item" href="/pricedetail">Price Detail</a>-->
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Addons
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                   aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Reports</span>
+                </a>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Reports :</h6>
+                        <a class="collapse-item" href="/productusagereport">Product Usage Report</a>
+                        <a class="collapse-item" href="/invoicereport">Invoice Report</a>
+                        <a class="collapse-item" href="/samplereport">Employee Report</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/samplechart">
+                    <i class="fas fa-fw fa-chart-bar"></i>
+                    <span>Charts</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/invoicereport">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tables</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <!-- Topbar Logo -->
+                    <form>
+                        <!-- Topbar Logo -->
+                        <nav class="navbar navbar-light">
+                            <a class="navbar-brand">
+                                <img src="resources/images/logo.png" height="30" alt="">
+                            </a>
+                        </nav>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="ploggeduser" class="mr-2 d-none d-lg-inline text-gray-600 small">Username</span>
+                                <span id="ploggeduserrole" class="mr-2 d-none d-lg-inline text-gray-600 small">Role</span>
+                                <img class="img-profile rounded-circle"
+                                    src="resources/images/profile.png">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editUserModal">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+<!--                                <a class="dropdown-item" href="#">-->
+<!--                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>-->
+<!--                                    Activity Log-->
+<!--                                </a>-->
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <div class="row">
+                                <div class="col-3"></div>
+                                <div class="col-6 text-center">
+                                    <h2 class="h2 font-weight-bold" style="color: #008B8B">Customer Management</h2>
+                                </div>
+                                <div class="col-3 text-right">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="d-none d-sm-inline-block btn btn-sm shadow-sm mt-2" style="width: 150px; background-color: #008B8B; color: white"  data-toggle="modal" data-target="#customerAddModal">
+                                        <i class="fas fa-plus fa-x text-white-50 mr-2"></i>
+                                        New Customer
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- table area -->
+                            <div class="row mt-2">
+                                <div class="col-12 table-responsive">
+                                    <table id="tableCustomerD" class="table table-striped table-hover">
+                                        <thead class="table-dark"  style="background-color: #002B3A; color: #008B8B">
+                                        <tr>
+                                            <th>Index</th>
+                                            <th>Code</th>
+                                            <th>Name</th>
+                                            <th>Mobile</th>
+                                            <th>Email</th>
+                                            <th>Status</th>
+                                            <th>Modify</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; www.fably.lk</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Modal Customer Form -->
+    <div class="modal fade" id="customerAddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="color:white; background-color: #008B8B">
+                    <h1 class="modal-title fs-5 font-weight-bold">Customer Form</h1>
+                    <button type="button" onclick="refreshTable(); refreshForm()" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <form onsubmit="return false">
+
+                                <div class="row mt-2">
+                                    <div class="col-md-12 text-lg-right">
+                                        <label class="form-label font-weight-bold col-form-label-sm"><span style="color:red">*</span>Required</label>
+                                    </div>
+                                </div>
+
+                                <!--  Name / Gender-->
+                                <div class="row mt-3">
+                                    <!--  Name-->
+                                    <div class="col-8">
+                                        <label for="txtName" class="form-label font-weight-bold">Name :<span style="color:red">*</span></label>
+                                        <input type="text" id="txtName" required data-toggle="tooltip" data-placement="top" title="Kamal Perera"
+                                               onkeyup="textFieldValidator(txtName,'^[A-Z][a-z.]{1,20}(\\s[A-Z][a-z.]{1,20})*$','customer','firstname','oldcustomer')"
+                                               class="form-control" placeholder="Enter Name">
+                                    </div>
+                                    <!--  Mobile No-->
+                                    <div class="col-4">
+                                        <label for="txtMobile" class="form-label font-weight-bold">Mobile No :<span style="color:red">*</span></label>
+                                        <input type="text" class="form-control" id="txtMobile" required placeholder="Enter Mobile No"
+                                               onkeyup="textFieldValidator(txtMobile,'^([0][7][0-9]{8})$','customer','mobile','oldcustomer')"
+                                               data-toggle="tooltip" data-placement="top" title="0772977577">
+                                    </div>
+
+                                </div>
+
+                                <!-- Gender / Customer Status-->
+                                <div class="row mt-2">
+                                    <!-- Customer Email-->
+                                    <div class="col-4">
+                                        <label for="inputEmail4" class="form-label font-weight-bold">Email :<span style="color:red">*</span></label>
+                                        <input type="email" class="form-control" id="inputEmail4" required placeholder="Enter Email"
+                                               onkeyup="textFieldValidator(inputEmail4,'^[A-Z a-z 0-9]{3,10}[@][a-z]{5,10}[.][a-z]{2,5}$','customer','email','oldcustomer')"
+                                               data-toggle="tooltip" data-placement="top" title="kamal@gmail.com">
+                                    </div>
+                                    <!-- Gender -->
+                                    <div class="col-4">
+                                        <div class="row">
+                                            <div class="col-md-8 bg-white">
+                                                <label  class="form-label font-weight-bold">Gender : <span style="color:red">*</span></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-2">
+                                            <div class="col">
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" id="radioMale" required name="gender" value="Male"
+                                                           onchange="radiofeildValidator(radioMale,'','customer','gender','oldcustomer',lblMale,lblFemale)">
+                                                    <label for="radioMale" class="form-check-label" id="lblMale"> Male </label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" id="radioFemale" required name="gender" value="Female"
+                                                           onchange="radiofeildValidator(radioFemale,'','customer','gender','oldcustomer',lblFemale,lblMale)">
+                                                    <label for="radioFemale" class="form-check-label" id="lblFemale"> Female </label>
+                                                </div>
+<!--                                                <div class="form-check form-check-inline">-->
+<!--                                                    <input type="radio" class="form-check-input" id="radioOther" required name="gender" value="Other"-->
+<!--                                                           onchange="radiofeildLabel3Validator(radioOther,'','customer','gender','oldcustomer',lblOther,lblMale,lblFemale)">-->
+<!--                                                    <label for="radioOther" class="form-check-label" id="lblOther"> Other </label>-->
+<!--                                                </div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Customer Status -->
+                                    <div class="col-4">
+                                        <label for="selectStatus" class="form-label font-weight-bold">Customer Status :<span style="color:red">*</span></label>
+                                        <select id="selectStatus" class="form-control" required
+                                                onchange="selectValidator(selectStatus,'','customer','customerstatus_id','oldcustomer')">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Customer Address / Description-->
+                                <div class="row mt-2">
+                                    <!-- Customer Address-->
+                                    <div class="col">
+                                        <label for="inputAddress" class="form-label font-weight-bold">Address :<span style="color:red">*</span></label>
+                                        <textarea class="form-control" id="inputAddress" required data-toggle="tooltip" data-placement="top" title="12/A, Flower Rd, Colombo" placeholder="Enter Address"
+                                                  onkeyup="textFieldValidator(inputAddress,'^[.0-9a-zA-Z\\s,-]+$','customer','address','oldcustomer')"></textarea>
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col">
+                                        <label for="cusDescription" class="form-label font-weight-bold">Description :</label>
+                                        <textarea id="cusDescription" class="form-control" placeholder="Enter Description"
+                                                  onchange="textFieldValidator(cusDescription,'','customer','description','oldcustomer')"></textarea>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <!-- buttons -->
+                    <div class="row">
+                        <div class="col text-center">
+                            <button class="btn" type="reset" style="width: 125px; background-color: #008B8B; color: #ffffff" onclick="refreshForm()"> Clear </button>
+                            <button class="btn ml-3" id="buttonCustomerUpdate" type="submit" style="width: 125px; background-color: #008B8B; color: #ffffff; pointer-events: all;" onclick="buttonUpdateMC()">Update</button>
+                            <button class="btn ml-3" id="buttonCustomerAdd" type="submit" style="width: 125px; background-color: #008B8B; color: #ffffff; pointer-events: all;" onclick="buttonAddMC()">Add</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Print-->
+    <!-- Modal for view customer detail -->
+    <div class="modal fade" id="modelViewCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" >Customer View</h1>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table id="tablePrintCustomer" class="table table-striped table-hover shadow rounded">
+                        <tr>
+                            <th>Customer Code</th>
+                            <td>:</td>
+                            <td id="tdPCusRegNo"></td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td>:</td>
+                            <td id="tdPCusName"></td>
+                        </tr>
+                        <tr>
+                            <th>Mobile No</th>
+                            <td>:</td>
+                            <td id="tdCusMobile"></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>:</td>
+                            <td id="tdPCusEmail"></td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>:</td>
+                            <td id="tdCusAddress"></td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>:</td>
+                            <td id="tdCusDescription"></td>
+                        </tr>
+                        <tr>
+                            <th>Gender</th>
+                            <td>:</td>
+                            <td id="tdCusGender"></td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>:</td>
+                            <td id="tdCusStatus"></td>
+                        </tr>
+                    </table>
+                    <!-- <form>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                    </form> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="printCustomerRow()">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="resources/vendor/jquery/jquery.min.js"></script>
+    <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- &lt;!&ndash; Core plugin JavaScript&ndash;&gt;
+     <script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>-->
+
+    <!-- Custom scripts for all pages-->
+    <script src="resources/js/sb-admin-2.min.js"></script>
+    <script src="resources/vendor/datatables/js/datatables.min.js"></script>
+
+    <script src="resources/script/common.js"></script>
+    <script src="login.js"></script>
+    <script src="customer.js"></script>
+
+</body>
+
+</html>

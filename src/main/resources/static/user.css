@@ -1,0 +1,77 @@
+html,
+body,
+.intro {
+  /*height: 100%;*/
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+thead th,
+tbody th {
+  /*color: #fff;*/
+  align-content: center;
+}
+
+tbody td {
+  /*font-weight: 500;*/
+  /*color: rgba(255,255,255,.65);*/
+}
+
+.card {
+  border-radius: .5rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /*display: flex;*/
+  background-color: white;
+}
+.block {
+  position: relative;
+  /*margin: 10% auto 0;*/
+  width: 100%;
+  height: 350px;
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+.block:before {
+  z-index: -1;
+}
+.block:before, .block:after{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #d7fcf6;
+  background: linear-gradient(235deg, #002B3A, #008B8B,#70e8da,
+    #a3fcf0, #002B3A, #008B8B,
+    #70e8da, #a3fcf0,#002B3A);
+    animation: animate 20s linear infinite;
+}
+
+.block:after {
+  z-index: -2;
+  filter: blur(40px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
